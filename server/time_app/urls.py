@@ -1,7 +1,12 @@
 from . import views
-from .blueprint import time_bp
+import flask
 
-time_bp.add_url_rule(
+bp = flask.Blueprint(
+    name="time_app",
+    import_name="time_app",
+)
+
+bp.add_url_rule(
     rule="/time",
     endpoint='time',
     view_func=views.TimeView.as_view('time')

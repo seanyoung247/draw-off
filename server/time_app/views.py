@@ -1,6 +1,7 @@
 import time
 from flask.views import View
 
+
 class TimeView(View):
     methods = ['GET',]
 
