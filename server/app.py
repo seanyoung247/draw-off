@@ -5,7 +5,7 @@ import time_app.urls
 
 if __name__ == "__main__":
     app = Flask(__name__)
-
+    # Register apps
     app.register_blueprint(time_app.urls.bp)
 
     app.run(debug=True)
