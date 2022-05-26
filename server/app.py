@@ -1,11 +1,10 @@
 from flask import Blueprint
 from flask import Flask
-import time_app.urls
+from timeapp import timeapp
 
+app = Flask(__name__)
+# Register apps
+timeapp.init(app)
 
 if __name__ == "__main__":
-    app = Flask(__name__)
-    # Register apps
-    app.register_blueprint(time_app.urls.bp)
-
     app.run(debug=True)
