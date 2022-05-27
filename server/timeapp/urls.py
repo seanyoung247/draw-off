@@ -1,3 +1,7 @@
+"""
+Defines the URLs for this app
+"""
+
 from . import views
 from flask import Blueprint
 

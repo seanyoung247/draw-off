@@ -1,3 +1,7 @@
+"""
+Defines this apps view routes
+"""
+
 import time
 from flask.views import View
 
