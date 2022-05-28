@@ -3,7 +3,7 @@ from flask import Flask
 from timeapp import timeapp
 from reactapp import reactapp
 
-app = Flask(__name__,static_folder='react/static')
+app = Flask(__name__, static_folder='react/static')
 
 
 # Register apps
