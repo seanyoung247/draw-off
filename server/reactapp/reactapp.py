@@ -2,6 +2,8 @@
 Main reactapp module.
 
 Performs Setup and attaches to flask app.
+
+Serves React static files.
 """
 
 from . import urls
