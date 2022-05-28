@@ -2,12 +2,13 @@
 Defines this apps view routes
 """
 
-from flask import render_template
+from crypt import methods
+from flask import render_template, send_from_directory
 from flask.views import View
 
 
 class Index(View):
     methods = ['GET',]
     
-    def dispatch_request(self):
-        return render_template('index.html', title='Hello World')
+    def dispatch_request(self, path='index.html'):      
+        return send_from_directory('react', path)
