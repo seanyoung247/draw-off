@@ -3,8 +3,8 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [currentDate, setCurrentDate] = useState(0);
-  const [currentTime, setCurrentTime] = useState(1);
+  const [currentDate, setCurrentDate] = useState('date');
+  const [currentTime, setCurrentTime] = useState('time');
 
   useEffect(() => {
     fetch('/time').then(res => res.json()).then(data => {
@@ -12,12 +12,9 @@ function App() {
       setCurrentDate( dateTime.toDateString() );
       setCurrentTime( dateTime.toTimeString() );
     });
-    // If the port is 3000
+    // If the port is 3000 this is the local testing server
     const port = window.location.host.split(':')[1];
-    if (port === '3000') {
-      // We're running on the react test server
-      document.title = 'React testing';
-    }
+    document.title = (port === '3000') ? 'React local testing' : 'React deployment test'
   }, []);
 
   return (
