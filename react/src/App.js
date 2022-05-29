@@ -26,6 +26,7 @@ function App() {
         >
           Learn React
         </a>
+        <p>Build version 1</p>
         <p>The current time is {currentTime}.</p>
       </header>
     </div>
