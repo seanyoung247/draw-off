@@ -3,12 +3,21 @@ import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  const [currentTime, setCurrentTime] = useState(0);
+  const [currentDate, setCurrentDate] = useState(0);
+  const [currentTime, setCurrentTime] = useState(1);
 
   useEffect(() => {
     fetch('/time').then(res => res.json()).then(data => {
-      setCurrentTime(data.time);
+      const dateTime = new Date(data.time * 1000);
+      setCurrentDate( dateTime.toDateString() );
+      setCurrentTime( dateTime.toTimeString() );
     });
+    // If the port is 3000
+    const port = window.location.host.split(':')[1];
+    if (port === '3000') {
+      // We're running on the react test server
+      document.title = 'React testing';
+    }
   }, []);
 
   return (
@@ -16,18 +25,10 @@ function App() {
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
-          Edit <code>src/App.js</code> and save to reload.
+          Heroku deployment test
         </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <p>Build version 1</p>
-        <p>The current time is {currentTime}.</p>
+        <p>Page was loaded on:</p>
+        <p>{currentDate} at {currentTime}.</p>
       </header>
     </div>
   );
