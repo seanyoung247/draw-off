@@ -10,4 +10,5 @@ class Index(View):
     methods = ['GET',]
     
     def dispatch_request(self, path='index.html'):
+        """ Redirects calls to website root to the react package """
         return send_from_directory('react', path)
