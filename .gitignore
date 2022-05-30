@@ -207,3 +207,5 @@ sketch
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+*.icloud
