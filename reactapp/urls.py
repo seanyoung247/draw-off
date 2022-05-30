@@ -1,9 +1,8 @@
 """
 Defines the url routes managed by this app
 """
-
-from flask import redirect
 from . import views
+
 
 def add_urls(bp):
     
