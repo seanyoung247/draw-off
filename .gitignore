@@ -19,7 +19,7 @@ __pycache__/
 
 # Distribution / packaging
 .Python
-#build/
+build/
 develop-eggs/
 dist/
 downloads/
@@ -195,7 +195,7 @@ sketch
 /coverage
 
 # production
-#/build
+/build
 
 # misc
 .DS_Store
